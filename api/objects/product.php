@@ -21,26 +21,6 @@ class Product
     }
 
 
-    /*// Метод для получения товаров
-    function read()
-    {
-        // Выбираем все записи
-        $query = "SELECT categories.name as category_name,
-        products.id,
-        products.name,
-        products.category_id
-        FROM products
-        LEFT JOIN categories  ON products.category_id = categories.id
-        ORDER BY products.created DESC";
-
-        // Подготовка запроса
-        $stmt = $this->connect->prepare($query);
-
-        // Выполняем запрос
-        $stmt->execute();
-        return $stmt;
-    }*/
-
     // Метод для создания товаров
     // Возвращает PDOStatement
     function create()
@@ -120,36 +100,6 @@ class Product
         return false;
     }
 
-    /*// Метод для поиска товаров по имени
-    function searchByName($keywords)
-    {
-        // Поиск записей (товаров) по "названию товара", "описанию товара", "названию категории"
-        $query = "SELECT categories.name as category_name,
-           products.id,
-           products.name,
-           products.category_id
-        FROM products
-        LEFT JOIN categories  ON products.category_id = categories.id
-        WHERE products.name = ? OR categories.name = ?
-        ORDER BY products.created DESC";
-
-        // Подготовка запроса
-        $stmt = $this->connect->prepare($query);
-
-        // Очистка
-        $keywords = htmlspecialchars(strip_tags($keywords));
-        $keywords = "%{$keywords}%";
-
-        // Привязка
-        $stmt->bindParam(1, $keywords);
-        $stmt->bindParam(2, $keywords);
-
-        // Выполняем запрос
-        $stmt->execute();
-
-        return $stmt;
-    }*/
-
 
     // Метод для поиска товаров по id категории
     /*
@@ -214,5 +164,55 @@ class Product
 
         return $stmt;
     }
+
+    /*// Метод для получения товаров
+    function read()
+    {
+        // Выбираем все записи
+        $query = "SELECT categories.name as category_name,
+        products.id,
+        products.name,
+        products.category_id
+        FROM products
+        LEFT JOIN categories  ON products.category_id = categories.id
+        ORDER BY products.created DESC";
+
+        // Подготовка запроса
+        $stmt = $this->connect->prepare($query);
+
+        // Выполняем запрос
+        $stmt->execute();
+        return $stmt;
+    }*/
+
+    /*// Метод для поиска товаров по имени
+    function searchByName($keywords)
+    {
+        // Поиск записей (товаров) по "названию товара", "описанию товара", "названию категории"
+        $query = "SELECT categories.name as category_name,
+           products.id,
+           products.name,
+           products.category_id
+        FROM products
+        LEFT JOIN categories  ON products.category_id = categories.id
+        WHERE products.name = ? OR categories.name = ?
+        ORDER BY products.created DESC";
+
+        // Подготовка запроса
+        $stmt = $this->connect->prepare($query);
+
+        // Очистка
+        $keywords = htmlspecialchars(strip_tags($keywords));
+        $keywords = "%{$keywords}%";
+
+        // Привязка
+        $stmt->bindParam(1, $keywords);
+        $stmt->bindParam(2, $keywords);
+
+        // Выполняем запрос
+        $stmt->execute();
+
+        return $stmt;
+    }*/
 
 }
