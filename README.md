@@ -54,7 +54,7 @@
 3. Установить СУБД MySQL, на веб-сервере Apache, установить PHP, настроить Apache для использование PHP (например через mod_php), включить для директории AllowOverride yes
 4. Данные для подключения к БД описаны в файле database.php
 5. Используя PhpMyAdmin, создать новую базу данных TestDb
-6. Создать 4 таблицы products,categories,users,tokens, таблица(products) должна содержать 4 столбца(id,name,category_id,status), таблица (categories) должна содержать 3 столбца(id,name,status),таблица(users) должна содержать 4 столбца(id,login,password,activ),таблица(tokens) должна содержать 3 столбца(id,login,token), заполнить столбцы данными
+6. Создать 4 таблицы products,categories,users,tokens, таблица(products) должна содержать 4 столбца(id,name,category_id,status), таблица (categories) должна содержать 3 столбца(id,name,status),таблица(users) должна содержать 4 столбца(id,login,password,activ),таблица(tokens) должна содержать 3 столбца(id,login,token), заполнить столбцы данными, или использовать пример готового дампа БД из файла api/config/TestDb.sql
 7. Прописать данные подключения к БД в файле database.php
 8. При запущенном сервере обращаться к API последству URL или cURL запросов вида http://..TestRESTApi-main/api/v1/products, так же можно использовать программу Postman, при вызове методов передавать данные в формате JSON, возвращаемые данные так же в формате JSON, авторизация просходит при вызове метода POST /api/vl/auth и передаче данных login и password в формате JSON(данные пользователя должны быть описаны в таблице users).
 
